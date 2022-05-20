@@ -245,7 +245,7 @@ Proof.
 move => n1; move:(ltnW n1) => n0.
 move:(pdiv_prime n1); set u := (pdiv n) => pu.
 move:(pfactor_coprime pu n0)(prime_gt1 pu) => [m pa pb] u1.
-have lp: 0 <  logn u n by rewrite logn_gt0 mem_primes pu n0 pdiv_dvd.
+have lp : 0 <  logn u n by rewrite logn_gt0 mem_primes pu n0 pdiv_dvd.
 have pc: coprime m (u ^ logn u n) by rewrite coprime_sym; apply:coprimeXl.
 case m1: (m==1).
   set y := u.-1 * u ^ (logn u n).-1.
@@ -4844,7 +4844,7 @@ Qed.
 
 Lemma GRr_b0 B:  GRr B 0 = 1.
 Proof.
-rewrite /GRr; set E :=  [set t | _];set v := (@set0 ( (ordinal_finType B.+1))).
+rewrite /GRr; set E :=  [set t | _];set v := (@set0 [the finType of 'I_B.+1]).
 suff: [set v] = E by move => <-; rewrite cards1.
 apply/ setP => x; rewrite !inE - Zeck_val_cv1; apply/eqP/eqP => h. 
   by rewrite h /seto_to_seq enum_set0 /= Zeckv_nil.
