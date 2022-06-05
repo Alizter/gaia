@@ -8,4 +8,5 @@
    -w -ambiguous-paths
    -w -deprecated-hint-without-locality
    -w -deprecated-ident-entry
-   -w -deprecated-hint-rewrite-without-locality))
+   -w -deprecated-hint-rewrite-without-locality)
+ (theories mathcomp.ssreflect gaia.sets gaia.schutte))
